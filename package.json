@@ -1,0 +1,30 @@
+{
+  "name": "wonted",
+  "version": "1.0.0",
+  "description": "A utility library for Node.js",
+  "keywords": ["node", "node.js", "utility", "library"],
+  "private": true,
+  "scripts": {
+    "test": "ava",
+    "watch": "ava --watch",
+    "build": "ts-node build.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbgl/wonted.git"
+  },
+  "author": "hbgl <gohbgl@gmail.com> (https://hbgl.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hbgl/wonted/issues"
+  },
+  "homepage": "https://github.com/hbgl/wonted#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "ava": "^5.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.8.4"
+  }
+}
