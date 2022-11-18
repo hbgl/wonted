@@ -2,25 +2,24 @@ import os from 'node:os';
 import nodePath from 'node:path';
 
 function normalizeForCmp(path: string) {
-    if (os.platform() !== 'win32') {
-        return nodePath.normalize(path);
+    if (os.platform() === 'win32') {
+        // Strip long path prefix.
+        if (path.startsWith('\\\\?\\')) {
+            path = path.slice(4);
+        }
+
+        // Paths under Windows are assumed to be case-insentitive
+        // even though that might not always be true.
+        path = path.toUpperCase();
     }
 
-    // Strip long path prefix.
-    if (path.startsWith('\\\\?\\')) {
-        path = path.slice(4);
-    }
-
-    // Add trailing slash to drive letter.
-    if (path.length === 2 && path[1] === ':') {
-        path = path + '\\';
+    // Add trailing slash.
+    const sep = nodePath.sep;
+    if (!path.endsWith(sep)) {
+        path = path + sep;
     }
 
     path = nodePath.normalize(path);
-
-    // Paths under Windows are assumed to be case-insentitive
-    // even though that might not always be true.
-    path = path.toUpperCase();
 
     return path;
 }
