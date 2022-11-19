@@ -4,10 +4,13 @@ import { isSubdir } from '@lib/path';
 [
     ['a', 'a/b', true],
     ['/a', '/a/b', true],
+    ['/a/', '/a/b', true],
     ['a/b', 'x/y', false],
     ['/a/b', '/x/y', false],
     ['', '', false],
     ['/a', '/a/', false],
+    ['/a', '/ab', false],
+    ['/a/b', '/a/bc', false],
 
     ...(process.platform === 'win32' ? [
         ['C:\\a', 'C:\\a\\b', true],
