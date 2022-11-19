@@ -2,12 +2,12 @@ import os from 'node:os';
 import nodePath from 'node:path';
 
 export function isSubdir(parent: string, maybeChild: string) {
-    parent = normalizeForCmp(parent);
-    maybeChild = normalizeForCmp(maybeChild);
+    parent = normalizeDirForCmp(parent);
+    maybeChild = normalizeDirForCmp(maybeChild);
     return parent.length < maybeChild.length && maybeChild.startsWith(parent);
 }
 
-function normalizeForCmp(path: string) {
+function normalizeDirForCmp(path: string) {
     if (os.platform() === 'win32') {
         // Strip long path prefix.
         if (path.startsWith('\\\\?\\')) {
