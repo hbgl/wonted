@@ -4,6 +4,10 @@
 
 A utility library for Node.js.
 
+## This is a pre-release
+
+The library is currently at a very pre-release state. You should probably not use it.
+
 ## Installation
 
 ```
