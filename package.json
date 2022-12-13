@@ -1,6 +1,6 @@
 {
   "name": "wonted",
-  "version": "0.0.1.beta",
+  "version": "0.0.1-beta",
   "description": "A utility library for Node.js",
   "keywords": ["node", "node.js", "utility", "library"],
   "private": true,
